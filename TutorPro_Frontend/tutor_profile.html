@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hồ sơ & Yêu cầu - TutorPro</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/management_table.css">
+</head>
+<body>
+    <div class="app-layout">
+        
+        <aside class="sidebar">
+            <div class="logo">TutorPro</div>
+            <div class="system-title">Hệ thống QL Gia sư</div>
+            
+            <nav class="admin-view">
+                <p class="view-title">ADMIN VIEW</p>
+                <a href="tutor_management.html" class="nav-item">
+                    <i class="icon">🧑‍🏫</i> Quản lý Gia sư
+                </a>
+                <a href="parent_management.html" class="nav-item">
+                    <i class="icon">👨‍👩‍👧</i> Quản lý Phụ huynh
+                </a>
+                <a href="approval_management.html" class="nav-item">
+                    <i class="icon">✅</i> Duyệt & Chốt Lớp
+                </a>
+                <a href="payment_management.html" class="nav-item">
+                    <i class="icon">💰</i> Quản lý Thanh toán
+                </a>
+                <a href="complaint_management.html" class="nav-item">
+                    <i class="icon">⚠️</i> Quản lý Khiếu nại
+                </a>
+                <a href="statistics_dashboard.html" class="nav-item">
+                    <i class="icon">📊</i> Thống kê
+                </a>
+            </nav>
+
+            <nav class="users-view">
+                <p class="view-title">USERS VIEW</p>
+                <a href="class_management.html" class="nav-item"> 
+                    <i class="icon">📚</i> Lớp học hiện tại
+                </a>
+                <a href="tutor_profile.html" class="nav-item active"> <i class="icon">📝</i> Hồ sơ & Yêu cầu
+                </a>
+                <a href="submit_complaint.html" class="nav-item">
+                    <i class="icon">🗣️</i> Gửi Khiếu nại/Đổi GS
+                </a>
+            </nav>
+            
+            <a href="index.html" class="nav-item" style="margin-top: 50px; color: #dc3545;">
+                <i class="icon">🚪</i> Đăng xuất
+            </a>
+        </aside>
+        
+        <main class="main-content">
+            <h1>Quản lý Hồ sơ & Yêu cầu Đăng lớp</h1>
+            
+            <div class="profile-layout-grid">
+                
+                <div class="class-card profile-info-card">
+                    <h2>Hồ sơ Gia sư (GS A)</h2>
+                    <div class="form-group">
+                        <label>Chủ đề dạy</label>
+                        <input type="text" value="Toán, Lý (THPT)" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>Bằng cấp/Kinh nghiệm</label>
+                        <textarea rows="4" readonly>Sinh viên ĐH Bách Khoa, 2 năm kinh nghiệm dạy kèm. Đạt giải HSG cấp Tỉnh.</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Khu vực</label>
+                        <input type="text" value="Quận 1, Online" readonly>
+                    </div>
+                    
+                    <button class="btn btn-primary action-edit-profile">Cập nhật Hồ sơ</button>
+                    <p style="font-size: 12px; color: #888; margin-top: 10px;">Trạng thái hồ sơ: Chờ Admin duyệt (lần cuối: 22/10)</p>
+                </div>
+
+                <div class="requests-list-card">
+                    <h2>Các Yêu cầu/Lớp đã đăng ký</h2>
+                    <div id="application-list-body">
+                        </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="scripts/tutor_profile.js"></script>
+    <script src="scripts/sidebar_logic.js"></script>
+</body>
+</html>

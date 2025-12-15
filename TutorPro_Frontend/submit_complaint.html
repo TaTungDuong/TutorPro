@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gửi Khiếu nại/Đổi GS - TutorPro</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/management_table.css">
+</head>
+<body>
+    <div class="app-layout">
+        
+        <aside class="sidebar">
+            <div class="logo">TutorPro</div>
+            <div class="system-title">Hệ thống QL Gia sư</div>
+            
+            <nav class="admin-view">
+                <p class="view-title">ADMIN VIEW</p>
+                <a href="tutor_management.html" class="nav-item"><i class="icon">🧑‍🏫</i> Quản lý Gia sư</a>
+                <a href="parent_management.html" class="nav-item"><i class="icon">👨‍👩‍👧</i> Quản lý Phụ huynh</a>
+                <a href="approval_management.html" class="nav-item"><i class="icon">✅</i> Duyệt & Chốt Lớp</a>
+                <a href="payment_management.html" class="nav-item"><i class="icon">💰</i> Quản lý Thanh toán</a>
+                <a href="complaint_management.html" class="nav-item"><i class="icon">⚠️</i> Quản lý Khiếu nại</a>
+                <a href="statistics_dashboard.html" class="nav-item"><i class="icon">📊</i> Thống kê</a>
+            </nav>
+
+            <nav class="users-view">
+                <p class="view-title">USERS VIEW</p>
+                <a href="class_management.html" class="nav-item"><i class="icon">📚</i> Lớp học hiện tại</a>
+                <a href="tutor_profile.html" class="nav-item"><i class="icon">📝</i> Hồ sơ & Yêu cầu</a>
+                <a href="submit_complaint.html" class="nav-item active">
+                    <i class="icon">🗣️</i> Gửi Khiếu nại/Đổi GS
+                </a>
+            </nav>
+            
+            <a href="index.html" class="nav-item" style="margin-top: 50px; color: #dc3545;">
+                <i class="icon">🚪</i> Đăng xuất
+            </a>
+        </aside>
+        
+        <main class="main-content">
+            <h1>Form Gửi Khiếu nại và Yêu cầu Hỗ trợ</h1>
+            
+            <div class="class-card" style="max-width: 700px; padding: 30px;">
+                <form id="complaint-form">
+                    <h3 style="color: #007bff; border-bottom: 1px solid #3c3c3c; padding-bottom: 10px; margin-top: 0;">Thông tin người gửi</h3>
+                    
+                    <div style="display: flex; gap: 20px;">
+                         <div class="form-group" style="flex: 1;">
+                            <label for="senderName">Họ tên của bạn</label>
+                            <input type="text" id="senderName" required placeholder="Nhập tên của bạn">
+                        </div>
+                        
+                        <div class="form-group" style="flex: 1;">
+                            <label for="senderRole">Bạn là ai trong hệ thống?</label>
+                            <select id="senderRole" required>
+                                <option value="">-- Chọn vai trò --</option>
+                                <option value="Parent">Phụ huynh</option>
+                                <option value="Tutor">Gia sư</option>
+                                <option value="Student">Học sinh</option>
+                                <option value="Other">Khác</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <h3 style="color: #dc3545; border-bottom: 1px solid #3c3c3c; padding-bottom: 10px; margin-top: 30px;">Nội dung Khiếu nại</h3>
+                    
+                    <div class="form-group">
+                        <label for="complaintType">Loại yêu cầu/sự cố</label>
+                        <select id="complaintType" required>
+                            <option value="">-- Chọn loại yêu cầu --</option>
+                            <option value="TutorIssue">Thái độ/Chất lượng giảng dạy của Gia sư</option>
+                            <option value="PaymentDelay">Chậm thanh toán thù lao</option>
+                            <option value="TutorChange">Yêu cầu đổi Gia sư</option>
+                            <option value="SystemError">Lỗi hệ thống/Hợp đồng</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">Mô tả chi tiết khiếu nại (Description)</label>
+                        <textarea id="description" rows="5" required placeholder="Vui lòng mô tả chi tiết sự cố và yêu cầu của bạn..."></textarea>
+                    </div>
+                    
+                    <div style="display: flex; gap: 10px; justify-content: flex-end; margin-top: 30px;">
+                        <button type="button" class="btn btn-secondary" id="clear-form">Xóa nội dung</button>
+                        <button type="submit" class="btn btn-primary">Gửi Khiếu nại</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+
+        <div id="confirm-modal" class="modal-backdrop" style="display: none;">
+            <div class="modal-content">
+                <h2>Xác nhận Gửi</h2>
+                <p>Bạn có chắc chắn muốn gửi khiếu nại này không?</p>
+                <div style="display: flex; justify-content: flex-end; gap: 10px;">
+                    <button class="btn btn-secondary" id="cancel-confirm">Hủy</button>
+                    <button class="btn btn-primary" id="final-submit">Xác nhận Gửi</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="scripts/sidebar_logic.js"></script>
+    <script src="scripts/submit_complaint.js"></script>
+</body>
+</html>
