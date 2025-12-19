@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Thanh toán - TutorPro</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/management_table.css">
+</head>
+<body>
+    <div class="app-layout">
+        <aside class="sidebar">
+    <div class="logo">TutorPro</div>
+    <div class="system-title">Hệ thống QL Gia sư</div>
+    
+    <nav class="admin-view">
+        <p class="view-title">ADMIN VIEW</p>
+        
+        <a href="tutor_management.html" class="nav-item">
+            <i class="icon">🧑‍🏫</i> Quản lý Gia sư
+        </a>
+        
+        <a href="parent_management.html" class="nav-item">
+            <i class="icon">👨‍👩‍👧</i> Quản lý Phụ huynh
+        </a>
+        
+        <a href="approval_management.html" class="nav-item">
+            <i class="icon">✅</i> Duyệt & Chốt Lớp
+        </a>
+        
+        <a href="payment_management.html" class="nav-item"> 
+            <i class="icon">💰</i> Quản lý Thanh toán
+        </a>
+        
+        <a href="complaint_management.html" class="nav-item">
+            <i class="icon">⚠️</i> Quản lý Khiếu nại
+        </a>
+        
+        <a href="statistics_dashboard.html" class="nav-item">
+            <i class="icon">📊</i> Thống kê
+        </a>
+        
+    </nav>
+
+    <nav class="users-view">
+        <p class="view-title">USERS VIEW</p>
+        
+        <a href="class_management.html" class="nav-item"> 
+            <i class="icon">📚</i> Lớp học hiện tại
+        </a>
+        
+        <a href="tutor_profile.html" class="nav-item">
+            <i class="icon">📝</i> Hồ sơ & Yêu cầu
+        </a>
+        
+        <a href="submit_complaint.html" class="nav-item">
+            <i class="icon">🗣️</i> Gửi Khiếu nại/Đổi GS
+        </a>
+    </nav>
+    
+    <a href="index.html" class="nav-item" style="margin-top: 50px; color: #dc3545;">
+        <i class="icon">🚪</i> Đăng xuất
+    </a>
+</aside>
+
+        <main class="main-content">
+            <h1>Quản lý Thanh toán (PH & GS)</h1>
+            
+            <div class="content-header">
+                <div class="search-filter">
+                    <input type="text" id="payment-search" placeholder="Tìm kiếm theo ID GD, Đối tượng...">
+                </div>
+            </div>
+
+            <div class="data-table-container">
+                <table class="management-table" id="payment-table">
+                    <thead>
+                        <tr>
+                            <th>ID GD</th>
+                            <th>Đối tượng</th>
+                            <th>Nội dung</th>
+                            <th>Số tiền</th>
+                            <th>Trạng thái</th>
+                            <th>Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody id="payment-list-body">
+                        </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+    <script src="scripts/apiClient.js"></script>
+    <script src="scripts/payment_management.js"></script>
+    <script src="scripts/sidebar_logic.js"></script>
+</body>
+</html>

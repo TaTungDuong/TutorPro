@@ -1,0 +1,182 @@
+/* ========================================================================= */
+/* styles/management_table.css - Định dạng cho Bảng quản lý & FORM (Dark Mode) */
+/* ========================================================================= */
+
+/* --- Container cho header của bảng (Search & Button) --- */
+.content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.search-filter {
+    display: flex;
+    gap: 10px;
+}
+
+/* Định dạng Input, Select cho thanh Search/Filter */
+.search-filter input[type="text"], 
+.search-filter select {
+    padding: 8px 15px;
+    border: 1px solid #3c3c3c;
+    border-radius: 6px;
+    font-size: 14px;
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+}
+.search-filter input[type="text"] {
+    width: 250px;
+}
+
+
+/* --- Bảng dữ liệu chính --- */
+.data-table-container {
+    background-color: #252526; /* Nền container bảng tối */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    overflow-x: auto;
+}
+
+.management-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.management-table th, .management-table td {
+    padding: 15px 20px;
+    border-bottom: 1px solid #3c3c3c; /* Đường kẻ ngang tối */
+    font-size: 14px;
+    color: #e0e0e0;
+}
+
+.management-table th {
+    background-color: #333333; /* Màu nền cho tiêu đề cột tối */
+    color: #999999;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+.management-table tr:hover {
+    background-color: #3c3c3c; /* Hiệu ứng hover tối */
+}
+
+/* Trạng thái trong bảng (Badges) */
+.status-badge {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.status-active { background-color: #1e3a24; color: #4CAF50; } /* Đã duyệt, Đã hoàn thành */
+.status-pending { background-color: #4f3a00; color: #FFC107; } /* Chờ xử lý, Chờ duyệt */
+.status-danger { background-color: #4a2123; color: #dc3545; } /* Mới, Nợ phí */
+.status-secondary { background-color: #33393e; color: #999999; } /* Trạng thái phụ */
+
+/* --- BỐ CỤC HỒ SƠ (Tutor Profile) --- */
+.profile-layout-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Chia thành 2 cột bằng nhau */
+    gap: 30px;
+    margin-top: 20px;
+}
+.profile-info-card textarea {
+    resize: vertical; /* Chỉ cho phép kéo dãn chiều dọc */
+}
+.requests-list-card .request-item {
+    margin-bottom: 15px;
+    padding: 15px;
+    border: 1px solid #333;
+    background-color: #2b2b35; 
+}
+
+
+/* ========================================== */
+/* --- ĐỊNH DẠNG FORM GỬI KHIẾU NẠI --- */
+/* ========================================== */
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #b0b0b0; 
+    font-size: 14px;
+}
+
+/* Áp dụng cho input, select, và textarea để đồng nhất */
+#complaint-form input[type="text"],
+#complaint-form select,
+#complaint-form textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #3c3c3c;
+    background-color: #1c1c24; 
+    color: #e0e0e0;
+    box-sizing: border-box;
+    font-size: 14px;
+    transition: border-color 0.2s;
+}
+
+#complaint-form input[type="text"]:focus,
+#complaint-form select:focus,
+#complaint-form textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+#complaint-form textarea {
+    resize: vertical; 
+}
+
+
+/* --- Modal Style (Hộp thoại popup) --- */
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; 
+}
+
+.modal-content {
+    background-color: #24242e; 
+    padding: 30px;
+    border-radius: 10px;
+    width: 500px;
+    max-width: 90%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    border: 1px solid #3c3c3c;
+}
+
+.modal-content h2 {
+    color: #007bff;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+#modal-description {
+    white-space: pre-wrap;
+    max-height: 300px;
+    overflow-y: auto;
+    border: 1px solid #333;
+    padding: 10px;
+    background-color: #1e1e1e;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    color: #e0e0e0;
+    font-size: 14px;
+}

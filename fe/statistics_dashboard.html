@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Thống kê - TutorPro</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/management_table.css">
+</head>
+<body>
+    <div class="app-layout">
+        
+        <aside class="sidebar">
+            <div class="logo">TutorPro</div>
+            <div class="system-title">Hệ thống QL Gia sư</div>
+            
+            <nav class="admin-view">
+                <p class="view-title">ADMIN VIEW</p>
+                
+                <a href="tutor_management.html" class="nav-item">
+                    <i class="icon">🧑‍🏫</i> Quản lý Gia sư
+                </a>
+                
+                <a href="parent_management.html" class="nav-item">
+                    <i class="icon">👨‍👩‍👧</i> Quản lý Phụ huynh
+                </a>
+                
+                <a href="approval_management.html" class="nav-item">
+                    <i class="icon">✅</i> Duyệt & Chốt Lớp
+                </a>
+                
+                <a href="payment_management.html" class="nav-item"> 
+                    <i class="icon">💰</i> Quản lý Thanh toán
+                </a>
+                
+                <a href="complaint_management.html" class="nav-item">
+                    <i class="icon">⚠️</i> Quản lý Khiếu nại
+                </a>
+                
+                <a href="statistics_dashboard.html" class="nav-item"> <i class="icon">📊</i> Thống kê
+                </a>
+                
+            </nav>
+
+            <nav class="users-view">
+                <p class="view-title">USERS VIEW</p>
+                
+                <a href="class_management.html" class="nav-item"> 
+                    <i class="icon">📚</i> Lớp học hiện tại
+                </a>
+                
+                <a href="tutor_profile.html" class="nav-item">
+                    <i class="icon">📝</i> Hồ sơ & Yêu cầu
+                </a>
+                
+                <a href="submit_complaint.html" class="nav-item">
+                    <i class="icon">🗣️</i> Gửi Khiếu nại/Đổi GS
+                </a>
+            </nav>
+            
+            <a href="index.html" class="nav-item" style="margin-top: 50px; color: #dc3545;">
+                <i class="icon">🚪</i> Đăng xuất
+            </a>
+        </aside>
+        <main class="main-content">
+            <h1>Dashboard Tổng hợp</h1>
+            
+            <div class="class-list-grid"> 
+                <div class="class-card">
+                    <h2>SỐ BUỔI HOÀN THÀNH</h2>
+                    <p style="font-size: 36px; font-weight: 700;">85</p>
+                    <p style="color: #28a745;">↑ 15% so với tháng trước</p>
+                </div>
+                <div class="class-card">
+                    <h2>TỔNG SỐ LỚP ĐANG HOẠT ĐỘNG</h2>
+                    <p style="font-size: 36px; font-weight: 700;">12</p>
+                    <p style="color: #28a745;">+3 lớp mới trong tháng</p>
+                </div>
+                <div class="class-card">
+                    <h2>DOANH THU THÁNG</h2>
+                    <p style="font-size: 36px; font-weight: 700; color: #007bff;">34.500.000 đ</p>
+                    <p style="color: #28a745;">↑ 8% so với tháng trước</p>
+                </div>
+                <div class="class-card">
+                    <h2>MỨC ĐỘ HÀI LÒNG</h2>
+                    <p style="font-size: 36px; font-weight: 700;">4.7 / 5.0</p>
+                    <p>210 đánh giá</p>
+                </div>
+            </div>
+
+            <h2 style="margin-top: 40px;">Phân Tích Chi Tiết</h2>
+            <div style="display: flex; gap: 20px;">
+                <div class="class-card" style="flex: 1;">
+                    <h3>Doanh Thu 6 Tháng Gần Nhất (Mockup Biểu đồ)</h3>
+                    <div style="height: 200px; background-color: #333333; text-align: center; padding-top: 50px; color: #999;">
+                        [Biểu đồ cột giả lập ở đây - Sẽ dùng Chart.js khi tích hợp]
+                    </div>
+                </div>
+                <div class="class-card" style="flex: 1;">
+                    <h3>Phân Phối Đánh Giá (210 Lượt)</h3>
+                    <p>5⭐ (67%)</p><div style="height: 10px; background-color: #28a745; width: 67%; border-radius: 5px;"></div>
+                    <p>4⭐ (24%)</p><div style="height: 10px; background-color: #007bff; width: 24%; border-radius: 5px;"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="scripts/apiClient.js"></script>
+    <script src="scripts/statistics_dashboard.js"></script>
+    <script src="scripts/sidebar_logic.js"></script>
+</body>
+</html>

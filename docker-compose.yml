@@ -1,0 +1,51 @@
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: tutorpro-db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: tutorpro
+    ports:
+      - "5432:5432"
+    volumes:
+      - tutorpro_pgdata:/var/lib/postgresql/data
+
+  api:
+    build:
+      context: ./be
+      dockerfile: Dockerfile
+      target: dev
+    container_name: tutorpro-api
+    environment:
+      NODE_ENV: development
+      PORT: 3000
+      DATABASE_URL: postgresql://postgres:postgres@db:5432/tutorpro?schema=public
+      JWT_ACCESS_SECRET: change_me_access
+      JWT_REFRESH_SECRET: change_me_refresh
+      JWT_ACCESS_EXPIRES_IN: 15m
+      JWT_REFRESH_EXPIRES_IN: 7d
+      CORS_ORIGIN: "*"
+    depends_on:
+      - db
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./be:/app
+      - node_modules:/app/node_modules
+    command: npm run start:dev
+
+  fe:
+    image: nginx:alpine
+    container_name: tutorpro-fe
+    depends_on:
+      - api
+    ports:
+      - "8080:80"
+    volumes:
+      - ./fe:/usr/share/nginx/html:ro
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+
+volumes:
+  tutorpro_pgdata:
+  node_modules:
